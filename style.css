@@ -1,0 +1,207 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #393434; /* Dark structural background */
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+    margin: 0;
+}
+
+.app-container {
+    background: #2d2828; 
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 800px;
+}
+
+h1 {
+    color: #c6bea9;
+    margin-top: 0;
+    font-size: 26px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.input-section {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 30px;
+}
+
+input[type="text"], select, button {
+    padding: 14px;
+    border: 1px solid #554e4e;
+    border-radius: 10px;
+    font-size: 15px;
+    outline: none;
+}
+
+input[type="text"] {
+    flex: 3;
+    background-color: #c6bea9;
+    color: #393434;
+}
+
+input::placeholder {
+    color: #554e4e;
+}
+
+select {
+    flex: 1;
+    background-color: #c6bea9;
+    color: #393434;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+button {
+    background-color: #c6bea9;
+    color: #393434;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #b3ab96;
+}
+
+/* Specific styling for Clear All button sitting inline */
+#clear-all-btn {
+    background-color: #c6a9a9; /* Soft muted background */
+    color: #393434;            /* Dark text color */
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#clear-all-btn:hover {
+    background-color: #b59898; /* Darker hover effect */
+}
+
+.columns-container {
+    display: flex;
+    gap: 20px;
+}
+
+.list-column {
+    flex: 1;
+    padding: 20px;
+    border-radius: 14px;
+    min-height: 300px;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.pui-column {
+    background-color: #4a252c;
+}
+
+.pisi-column {
+    background-color: #46545f;
+}
+
+.list-column.drag-over {
+    background-color: #554e4e;
+    border-style: dashed;
+    border-color: #c6bea9;
+}
+
+h2 {
+    font-size: 18px;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #c6bea9;
+    border-bottom: 2px solid rgba(198, 190, 169, 0.2);
+    padding-bottom: 8px;
+}
+
+/* Clear all list indentations entirely */
+ul {
+    list-style: none;
+    padding: 0 !important; /* Forces removal of browser padding */
+    margin: 0 !important;  /* Forces removal of browser margins */
+    min-height: 250px;
+    text-align: left;      /* Forces container contents to align left */
+}
+
+/* Item bubble row layout */
+li {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important; /* Forces alignment to begin at the absolute left */
+    padding: 12px 16px;
+    background: #c6bea9; 
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: grab;
+    transition: transform 0.1s ease, opacity 0.2s ease;
+    border: none; 
+    width: auto;
+}
+
+li.dragging {
+    opacity: 0.4;
+    cursor: grabbing;
+}
+
+/* Checkbox alignment - Snaps right up to the left margin */
+li input[type="checkbox"] {
+    margin: 0 12px 0 0 !important; /* Top: 0, Right: 12px space to text, Bottom: 0, Left: 0 */
+    transform: scale(1.2);
+    cursor: pointer;
+    flex-shrink: 0; 
+}
+
+/* Item text alignment - Forces it to stick immediately next to the checkbox */
+.item-text {
+    flex-grow: 1;
+    text-align: left !important; /* Strict internal left text alignment */
+    display: block !important;
+    color: #393434; 
+    font-weight: 600;
+    word-break: break-all;
+}
+
+/* High contrast Dark Bin Button Style */
+.delete-btn {
+    background: none;
+    border: none;
+    padding: 4px 8px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 6px;
+    color: #2d2828; 
+    transition: background-color 0.2s;
+    flex-shrink: 0;
+    margin-left: auto; /* Pushes the bin icon completely to the far right side */
+}
+
+.delete-btn:hover {
+    background-color: rgba(57, 52, 52, 0.15);
+}
+
+/* Checked styling rules */
+li.checked {
+    background: rgba(198, 190, 169, 0.4); 
+    opacity: 0.5;
+}
+
+li.checked .item-text {
+    text-decoration: line-through;
+    color: rgba(57, 52, 52, 0.6);
+}
+
+@media (max-width: 600px) {
+    .columns-container {
+        flex-direction: column;
+    }
+    .input-section {
+        flex-direction: column;
+    }
+}

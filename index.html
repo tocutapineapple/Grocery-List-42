@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <h1>🛒 Grocery List</h1>
+        
+        <!-- Input section to add items -->
+        <div class="input-section">
+            <input type="text" id="item-input" placeholder="Add an item (e.g., Worms, Fish)...">
+            
+            <select id="family-select">
+                <option value="pui">🐤 Pui</option>
+                <option value="pisi">🐈 Pisi</option>
+            </select>
+            
+            <button id="add-btn">Add Item</button>
+            <button id="clear-all-btn">Clear All</button>
+        </div>
+
+        <!-- The two separate shopping columns -->
+        <div class="columns-container">
+            
+            <!-- Pui's Section (Little Chick) -->
+            <div class="list-column pui-column" id="pui-column-zone">
+                <h2>🐤 Pui's List</h2>
+                <ul id="pui-list" class="drag-zone">
+                    <!-- Pui's items will appear here -->
+                </ul>
+            </div>
+
+            <!-- Pisi's Section (Cat) -->
+            <div class="list-column pisi-column" id="pisi-column-zone">
+                <h2>🐈 Pisi's List</h2>
+                <ul id="pisi-list" class="drag-zone">
+                    <!-- Pisi's items will appear here -->
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
